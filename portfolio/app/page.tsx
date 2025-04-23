@@ -32,39 +32,53 @@ const SUGGESTIONS = [
   "Tell me about your education"
 ]
 
-const RESUME = `Shubham Mishra
-Linkedin: linkedin.com/in/shubhxm/ Email: shubhammishra41880@gmail.com
-Github: github.com/SHxBHAM Mobile: +91- 7217821735
-SKILLS
-• Languages: JavaScript, HTML, CSS, TypeScript, Python, C++
-• Frameworks: HTML and CSS, Bootstrap, NodeJS, React • Tools/Platforms: MySQL, MongoDB, Github, Vercel • Soft Skills: Problem-Solving Skills, Team Player, Project Management, Adaptability
-• Core Competencies: Full-Stack Development, Performance Optimization, Problem-Solving & Logical Reasoning
-• PROJECTS
-• SoundPrint March 2025
-Developed a web application that transforms users' Spotify listening history into a unique waveform and
-enables NFT minting on the Internet Computer Protocol (ICP).  Integrated Spotify Web API for real-time data fetching and Internet Identity for secure, passwordless Web3
-authentication.  Built a responsive and modular frontend using React, Tailwind CSS, and TypeScript, deployed at soundprint.icp0.io.  Secured 1st place at Block se Block, a Web3 hackathon organized by ICP Hub, among 200+ participants.  Tech Stack: React, TypeScript, Tailwind CSS, Spotify Web API, Internet Identity, ICP
-• TBSM Showcase: Jan 2024
-Designed and developed a fan website dedicated to Seedhe Maut, featuring their discography, albums, FAQs, and fan insights. The website provides an interactive experience for users to explore the duo's music
-and journey.  Showcased albums like Bayaan, Nayaab, Lunch Break, and न with detailed descriptions.  Integrated an FAQ section for fan engagement.  Developed a responsive and visually appealing interface for seamless navigation deployed at - https://terabhaiseedhemaut.netlify.app/.  The website attracted high traction during launch, peaking at over 700 concurrent viewers, shared directly by the duo with their fanbase. • Get-Your-Tixx: May 2024
-Built an attendance marking system for events that generates unique QR codes as tickets
-for each attendee and sends confirmation emails using Mailgun. Volunteers or admins can verify
-attendees through unique profiles.  Implemented QR code-based ticketing to streamline event check-ins.  Integrated Mailgun API to send automated email confirmations.  Designed an admin panel for managing attendees efficiently.  Built and controlled Versions over git on Repository -github.com/SHxBHAM/Get-Your-Tixx  Tech: Node.js, Express.js, MongoDB, QR Code Generation Libraries, Mailgun API
-ACHIEVEMENTS/INVOLVEMENTS
-• Winner | Block se Block - Web3 Hackathon by ICP Hub
-Secured 1
-st Place among 200+ participants buliding Soundprint, a Spotify powered NFT generator on the ICP chain
-Showcasing Web3 Authentication, realtitme music data integration and block chain based NFT minting. • Core Team Member | Google Developer Student Club (GDSC), LPU
-Organized and executed key events like GDSC WoW, overseeing logistics, coordination, and team collaboration. Developed skills in web development, Linux, and SSH through hands-on projects and mentorship from senior members. • Core Team Member | Encrypt Edge
-Collaborated with cross-functional teams to design cybersecurity challenges, ensure best practices, and enhance
-participant engagement. Played a key role in organizing and executing the 24-hour hackathon "Republic of Cyber Sentinels (RCS)", coordinating logistics, managing event flow, and ensuring smooth operations. EDUCATION
-Lovely Professional University Punjab, India
-Bachelor of Technology - Computer Science and Engineering; CGPA: 7.5 Since August 2022
-Saint Marks Sr. Sec. Public School Delhi
-Intermediate; Percentage: 7 9 % April 2021 - March 2022
-Saint Marks Sr. Sec. Public School Delhi
-Matriculation; Percentage: 82% April 2018 - March 2019
-•`
+const RESUME = `
+Nandan Upadhyay
+Vadodara, Gujarat 391740
+9998762172 menotnandan6969@gmail.com linkedin.com/in/nandanupadhyay github.com/NandanUpadhyay2611
+Skills
+• Languages : C, C++, SQL, HTML, CSS, JavaScript, Java, Python, Typescript
+• Frameworks : React.js, Express.js, Node.js, MongoDB, PostgreSQL, Next.js, Tailwind CSS
+• Coursework : Algorithms Analysis, Operating System(OS), Data Structures, Networking, Database (DBMS), Software Engineering
+• Miscellaneous : Linux, Shell (Bash), Git, Vs code, Prompt Engineering, AWS
+Projects
+Multi-threaded Proxy Server with LRU Caching | C language, Linux Apr 2024 - June 2024
+• Developed a robust multi-threaded proxy server in C, handling up to 10 concurrent client connections and leveraging POSIX
+threads for 80% higher throughput.
+• Implemented a hybrid hash map + doubly linked list LRU caching solution, reducing average response times by 70% through
+rapid lookups and streamlined eviction policies.
+• Ensured thread-safe operations using mutex locks and condition variables, effectively eliminating race conditions and
+maintaining data integrity in high-concurrency environments.
+• Github Repository Link: https://github.com/NandanUpadhyay2611/MultiThreadedProxyServer
+RESTful E-commerce API | Node.js, Express, MongoDB, JWT Dec 2024 – Jan 2025
+• Architected a secure, high-performing E-commerce REST API (99.9% uptime) with JWT based user authentication, reducing
+unauthorized access by 90%.
+• Streamlined product management using a role-based access system for admins, handling up to 3,000 daily CRUD
+operations and cutting endpoint response times by 25%.
+• Built a scalable shopping cart module (add, update, remove items) and checkout flow, improving order processing speed by
+30%.
+• Github Repository Link: https://github.com/NandanUpadhyay2611
+Repo-Pilot : Developer Tool | React, Node.js, Express.js, Gemini API, Assembly API, LangChain Feb 2025 – Mar 2025
+• Currently working on “Repo-Pilot,” a developer collaboration platform, boosting teamwork efficiency by an estimated 40%.
+•Implemented AI-driven automatic documentation for Github project repository, commit message summaries, and codebase
+search, accelerating code reviews and reducing onboarding time by 30%.
+• Established a GitHub RAG (Retrieval-Augmented Generation) pipeline, ensuring seamless repository management and
+enhanced developer transparency.
+• Github Repository Link: https://github.com/Nandanupadhyay2611
+ Achievements
+• Secured 2nd Runner-Up, WebKaHackathon – Led frontend development for a finance management system, designing an intuitive
+UI and seamless functionality to enhance user engagement.
+• Engineered Water Wise, a knowledge-sharing app for water conservation at GearUp Season Hackathon, optimizing UI to boost
+content discovery and engagement by 25%.
+• Solved over 300+ problems on platforms such as Leetcode and Geeks For Geeks.
+• Contributed to open-source projects during GirlScript Summer of Code and HacktoberFest, resolving 10+ bugs, implementing 5
+features, and collaborating globally to enhance project functionality.
+Certifications
+• Design and Analysis of Algorithm – ( Coursera ) July 24 – Oct 24
+• Cloud Computing ( NPTEL ) Feb 24 – Apr 24
+Education
+Lovely Professional University | Jalandhar, Punjab Aug 22 – Jul 26
+Computer Science and Engineering — CGPA: 7.70 `
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false)

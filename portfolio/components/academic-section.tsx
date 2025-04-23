@@ -27,7 +27,7 @@ const EDUCATION = [
 
 export default function AcademicSection() {
   return (
-    <section className="relative py-20">
+    <section id="academic" className="relative py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function AcademicSection() {
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Academic Odyssey</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Education</h2>
             <p className="text-gray-400 text-lg">Showcasing my educational journey and academic achievements</p>
           </div>
 

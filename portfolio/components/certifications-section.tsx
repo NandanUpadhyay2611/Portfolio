@@ -13,39 +13,39 @@ export default function CertificationsSection() {
 
   const featuredCertifications = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      credentialId: "AWS-123456",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-      link: "#",
+      title: "Design and Analysis of Algorithms",
+      issuer: "Coursera",
+      date: "2024",
+      credentialId: "U9JDXLLTZLKF",
+      logo: "https://th.bing.com/th/id/OIP.AvjdR1puwX7cxCZnkwccBAHaHa?w=180&h=180&c=7&r=0&o=5&pid=1.7",
+      link: "https://www.coursera.org/account/accomplishments/verify/4MUT9FWQ23HX",
     },
     {
-      title: "Google Professional Cloud Developer",
-      issuer: "Google Cloud",
-      date: "2022",
-      credentialId: "GCP-789012",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-      link: "#",
+      title: "The Bits and Bytes of Computer Networking",
+      issuer: "Google",
+      date: "2024",
+      credentialId: "CZQJNZLDQELQ",
+      logo: "https://www.citypng.com/public/uploads/preview/google-logo-icon-gsuite-hd-701751694791470gzbayltphh.png",
+      link: "https://coursera.org/verify/CZQJNZLDQELQ",
     },
   ]
 
   const additionalCertifications = [
     {
-      title: "Microsoft Certified: Azure Developer Associate",
-      issuer: "Microsoft",
-      date: "2022",
-      credentialId: "MSFT-345678",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-      link: "#",
+      title: "Generative AI Primer",
+      issuer: "Coursera",
+      date: "2024",
+      credentialId: "F2AK49QUPAGZ",
+      logo: "https://th.bing.com/th/id/OIP.AvjdR1puwX7cxCZnkwccBAHaHa?w=180&h=180&c=7&r=0&o=5&pid=1.7",
+      link: "https://coursera.org/verify/F2AK49QUPAGZ",
     },
     {
-      title: "TensorFlow Developer Certificate",
-      issuer: "Google",
-      date: "2021",
-      credentialId: "TF-901234",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-      link: "#",
+      title: "Cloud Computing",
+      issuer: "NPTEL",
+      date: "2024",
+      credentialId: "NPTEL24CS118S167020171804431723",
+      logo: "https://cdn-1.webcatalog.io/catalog/nptel/nptel-social-preview.png?v=1714777011674",
+      link: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS118S167020171804431723",
     },
   ]
 

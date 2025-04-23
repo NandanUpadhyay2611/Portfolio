@@ -30,7 +30,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.5 }}
               className="text-6xl font-bold text-white mb-8"
             >
-              AM
+              NU
             </motion.div>
 
             <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">

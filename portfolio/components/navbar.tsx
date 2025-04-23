@@ -36,6 +36,15 @@ export default function Navbar({ scrolled }: NavbarProps) {
     document.body.removeChild(link)
   }
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -45,18 +54,19 @@ export default function Navbar({ scrolled }: NavbarProps) {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="text-white font-bold text-2xl">
-            SM
+            NU
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-sm text-white/70 hover:text-white transition-colors"
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -94,14 +104,14 @@ export default function Navbar({ scrolled }: NavbarProps) {
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="text-white/70 hover:text-white py-2"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               <div className="flex flex-col space-y-3">
                 <Button 

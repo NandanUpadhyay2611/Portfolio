@@ -4,37 +4,41 @@ import { Button } from "./ui/button"
 
 const HACKATHONS = [
   {
-    title: "Block se Block - Web3 Hackathon",
-    position: "1st Place Winner",
-    organizer: "ICP Hub",
-    description: "Built Soundprint, a Spotify-powered NFT generator on the ICP chain. Implemented Web3 Authentication, real-time music data integration, and blockchain-based NFT minting.",
-    link: "https://soundprint.icp0.io",
-    stats: "200+ participants"
+    title: "WebKaHackathon",
+    position: "2nd Runner-Up",
+    organizer: "Block se Block",
+    description: "Led backend development for a finance management system, designing an Scalable and Secure backend architecture and seamless functionality to enhance user engagement.",
+    stats: "Ranked 2nd runner up in the hackathon"
   },
-  // Add more hackathons here
+  {
+    title: "GearUp Season Hackathon",
+    position: "Participant",
+    organizer: "Government of India",
+    description: "Engineered Water Wise, a knowledge-sharing app for water conservation, optimizing UI to boost content discovery and engagement by 25%.",
+    stats: "ranked in top 40 teams among 400+ teams"
+  }
 ]
 
 const CONTRIBUTIONS = [
   {
-    project: "GDSC WoW",
-    role: "Core Team Member",
-    org: "Google Developer Student Club (GDSC), LPU",
-    description: "Organized and executed key events, overseeing logistics, coordination, and team collaboration. Developed skills in web development, Linux, and SSH through hands-on projects.",
-    achievements: "Successfully managed event logistics and technical workshops"
+    project: "GirlScript Summer of Code",
+    role: "Open Source Contributor",
+    org: "GirlScript Foundation",
+    description: "Contributed to open-source projects, resolving 10+ bugs, implementing 5 features, and collaborating globally to enhance project functionality.",
+    achievements: "Ranked in top 100 contributors"
   },
   {
-    project: "Republic of Cyber Sentinels",
-    role: "Core Team Member",
-    org: "Encrypt Edge",
-    description: "Collaborated with cross-functional teams to design cybersecurity challenges and ensure best practices. Played a key role in organizing the 24-hour hackathon.",
-    achievements: "Enhanced participant engagement and event operations"
-  },
-  // Add more contributions here
+    project: "Hacktoberfest",
+    role: "Open Source Contributor",
+    org: "DigitalOcean",
+    description: "Contributed to open-source projects, resolving 5+ bugs, implementing 5 features.",
+    achievements: "Contributed to 3+ projects"
+  }
 ]
 
 export default function HackathonsSection() {
   return (
-    <section className="relative py-20">
+    <section id="hackathons" className="relative py-20">
       {/* Floating icons background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-10 text-amber-500/10 w-24 h-24">
@@ -88,15 +92,6 @@ export default function HackathonsSection() {
                 <p className="text-gray-400 mb-4">{hackathon.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">{hackathon.organizer} • {hackathon.stats}</span>
-                  {hackathon.link && (
-                    <Button
-                      variant="ghost"
-                      className="text-amber-500 hover:text-amber-400 -mr-4"
-                      onClick={() => window.open(hackathon.link, '_blank')}
-                    >
-                      View <ArrowUpRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  )}
                 </div>
               </div>
             </motion.div>
