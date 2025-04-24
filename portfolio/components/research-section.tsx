@@ -2,12 +2,22 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Book, Calendar, Users, FileText, Building, ExternalLink } from "lucide-react"
+import { Book, Calendar, Users, FileText, Building, ExternalLink, Download } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 export default function ResearchSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+
+  const handleDownload = (fileName: string) => {
+    const link = document.createElement('a')
+    link.href = `/${fileName}`
+    link.download = fileName
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   const publications = [
     {
@@ -16,7 +26,8 @@ export default function ResearchSection() {
       date: "2024",
       status: "Under Review", // or "Under Review", "Accepted", etc.
       abstract: "Research paper on Designing user interfaces and system architecture focused on optimizing user interaction, accessibility, and administrative efficiency to deliver intuitive and inclusive digital experiences",
-      type: "publication" // or "patent"
+      type: "publication", // or "patent"
+      pdfFile: "UI_System_Design_Paper.pdf" // Add the PDF file name here
     },
     // Add more publications here
   ]
@@ -76,16 +87,27 @@ export default function ResearchSection() {
 
                     <p className="mt-4 text-white/70">{pub.abstract}</p>
 
-                    {pub.doi && (
-                      <a
-                        href={pub.doi}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center mt-4 text-blue-400 hover:text-blue-300"
+                    <div className="flex items-center gap-4 mt-4">
+                      {pub.doi && (
+                        <a
+                          href={pub.doi}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                        >
+                          View Publication <ExternalLink className="ml-1 h-4 w-4" />
+                        </a>
+                      )}
+                      
+                      <Button
+                        variant="outline"
+                        className="border-blue-500/20 text-blue-400 hover:bg-blue-500/10"
+                        onClick={() => handleDownload(pub.pdfFile)}
                       >
-                        View Publication <ExternalLink className="ml-1 h-4 w-4" />
-                      </a>
-                    )}
+                        <Download className="mr-2 h-4 w-4" />
+                        Download Paper
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </motion.div>
