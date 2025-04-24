@@ -1,140 +1,100 @@
-import { motion } from "framer-motion"
-import { Trophy, GitFork, Users, ArrowUpRight } from "lucide-react"
-import { Button } from "./ui/button"
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
+import Link from "next/link"
+import { Trophy, Users, GitBranch } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 
-const HACKATHONS = [
-  {
-    title: "WebKaHackathon",
-    position: "2nd Runner-Up",
-    organizer: "Block se Block",
-    description: "Led backend development for a finance management system, designing an Scalable and Secure backend architecture and seamless functionality to enhance user engagement.",
-    stats: "Ranked 2nd runner up in the hackathon"
-  },
-  {
-    title: "GearUp Season Hackathon",
-    position: "Participant",
-    organizer: "Government of India",
-    description: "Engineered Water Wise, a knowledge-sharing app for water conservation, optimizing UI to boost content discovery and engagement by 25%.",
-    stats: "ranked in top 40 teams among 400+ teams"
-  }
-]
-
-const CONTRIBUTIONS = [
-  {
-    project: "GirlScript Summer of Code",
-    role: "Open Source Contributor",
-    org: "GirlScript Foundation",
-    description: "Contributed to open-source projects, resolving 10+ bugs, implementing 5 features, and collaborating globally to enhance project functionality.",
-    achievements: "Ranked in top 100 contributors"
-  },
-  {
-    project: "Hacktoberfest",
-    role: "Open Source Contributor",
-    org: "DigitalOcean",
-    description: "Contributed to open-source projects, resolving 5+ bugs, implementing 5 features.",
-    achievements: "Contributed to 3+ projects"
-  }
-]
+interface HackathonProject {
+  title: string
+  position: string
+  description: string
+  organization: string
+  teamSize?: string
+  repoUrl: string
+}
 
 export default function HackathonsSection() {
-  return (
-    <section id="hackathons" className="relative py-20">
-      {/* Floating icons background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-10 text-amber-500/10 w-24 h-24">
-          <Trophy className="w-full h-full" />
-        </div>
-        <div className="absolute bottom-1/4 left-10 text-purple-500/10 w-20 h-20">
-          <GitFork className="w-full h-full" />
-        </div>
-        <div className="absolute top-1/3 left-1/4 text-amber-500/10 w-16 h-16 rotate-12">
-          <Users className="w-full h-full" />
-        </div>
-      </div>
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
 
+  const hackathons: HackathonProject[] = [
+    {
+      title: "WebKaHackathon",
+      position: "2nd Runner-Up",
+      description: "Led backend development for a finance management system, designing an Scalable and Secure backend architecture and seamless functionality to enhance user engagement.",
+      organization: "Block se Block • Ranked 2nd runner up in the hackathon",
+      teamSize: "4",
+      repoUrl: "https://github.com/dkgamer02ai/finance-mngment" 
+    },
+    {
+      title: "GearUp Season Hackathon",
+      position: "Participant",
+      description: "Engineered Water Wise, a knowledge-sharing app for water conservation, optimizing UI to boost content discovery and engagement by 25%.",
+      organization: "Government of India • ranked in top 40 teams among 400+ teams",
+      teamSize: "3",
+      repoUrl: "https://github.com/NandanUpadhyay2611/WaterWise" 
+    }
+  ]
+
+  return (
+    <section id="hackathons" ref={ref} className="py-24 md:py-32 border-t border-white/10">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Hackathons & Contributions
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Hackathons & Contributions</h2>
+          <p className="text-gray-400 text-lg text-center mb-16">
             Showcasing my journey through competitive coding challenges and community involvement
           </p>
-        </motion.div>
 
-        {/* Hackathons Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {HACKATHONS.map((hackathon, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="relative rounded-lg border border-white/10 p-6 transition-all duration-300 hover:border-white/20">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-1">{hackathon.title}</h3>
-                    <p className="text-amber-500">{hackathon.position}</p>
-                  </div>
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-amber-500/10 to-purple-500/10">
-                    <Trophy className="text-amber-400 h-6 w-6" />
-                  </div>
-                </div>
-                <p className="text-gray-400 mb-4">{hackathon.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">{hackathon.organizer} • {hackathon.stats}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Open Source Contributions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          <h3 className="text-2xl font-semibold text-white mb-8">Open Source & Community</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {CONTRIBUTIONS.map((contribution, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="relative rounded-lg border border-white/10 p-6 transition-all duration-300 hover:border-white/20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {hackathons.map((hackathon, index) => (
+              <Link href={hackathon.repoUrl} key={hackathon.title} target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                >
                   <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/10 to-amber-500/10">
-                      {index % 2 === 0 ? (
-                        <GitFork className="h-5 w-5 text-purple-400" />
-                      ) : (
-                        <Users className="h-5 w-5 text-amber-400" />
-                      )}
+                    <div className="bg-blue-500/10 rounded-lg p-3 flex-shrink-0">
+                      <Trophy className="w-6 h-6 text-blue-400" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-medium text-white mb-1">{contribution.project}</h4>
-                      <p className="text-amber-500 text-sm mb-2">{contribution.role}</p>
-                      <p className="text-gray-400 text-sm mb-3">{contribution.description}</p>
-                      <p className="text-purple-400/90 text-sm">{contribution.achievements}</p>
+
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between flex-wrap gap-2">
+                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                          {hackathon.title}
+                        </h3>
+                        <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/20">
+                          {hackathon.position}
+                        </Badge>
+                      </div>
+
+                      {hackathon.teamSize && (
+                        <div className="flex items-center mt-2 text-white/70">
+                          <Users className="mr-2 h-4 w-4" />
+                          <p>Team Size: {hackathon.teamSize}</p>
+                        </div>
+                      )}
+
+                      <p className="mt-4 text-white/70">{hackathon.description}</p>
+
+                      <div className="flex items-center mt-4 text-white/50">
+                        <GitBranch className="mr-2 h-4 w-4" />
+                        <p>{hackathon.organization}</p>
+                      </div>
+
+                      <div className="mt-4 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                        View Project on GitHub →
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>
